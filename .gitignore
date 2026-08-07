@@ -1,0 +1,21 @@
+# Virtual environment — everyone creates their own locally
+venv/
+
+# PDF documents — private, never share on GitHub
+pdfs/
+
+# ChromaDB database — gets rebuilt locally from PDFs
+research_db/
+
+# Python cache files — auto-generated, not needed on GitHub
+__pycache__/
+*.pyc
+
+# Environment variables and secrets — never share these
+.env
+
+# VS Code settings — personal, not project related
+.vscode/
+
+# Working notes — personal reference, not code
+RAG_Field_Notes_v5.docx
