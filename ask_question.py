@@ -55,6 +55,7 @@ def ask(question, k=4):    # k=4 means retrieve the 4 most relevant chunks
     Answer the question using ONLY the information provided in the context below.
     If the answer is not in the context, say "I could not find this in the provided papers."
     Always be precise and cite specific details from the context.
+    IMPORTANT: Never include reference numbers like [39], [11], [40] or any bracketed numbers in your answer. These are internal citation markers that are meaningless to the reader. Describe findings and concepts directly without any bracketed numbers.
 
     Context from research papers:
     {context}
@@ -70,6 +71,10 @@ def ask(question, k=4):    # k=4 means retrieve the 4 most relevant chunks
     )
 
     answer = response["message"]["content"] # extract the answer text from the response
+    
+    import re
+    answer = re.sub(r'\[\d+\]', '', answer) # remove citation numbers like [39], [11], [40]
+    answer = re.sub(r'\s+', ' ', answer).strip()   # clean up any extra spaces left behind 
 
     # Step 5: collect source citations
     sources = list(set([doc.metadata["source"] for doc in results])) # get unique paper filenames
