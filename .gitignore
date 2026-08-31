@@ -22,3 +22,6 @@ RAG_Field_Notes_v5.docx
 
 # Field notes — personal reference documents
 *.docx
+
+# User query logs — private, never share
+logs.txt
