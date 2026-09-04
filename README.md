@@ -1,22 +1,27 @@
-# Research Assistant — RAG + AI Agent
+# Research Assistant Application based on RAG (Retrieval Augmented Generation) and AI Agents
 
 This project is based on building a product with universal research literature assistant
-especially for the research student who reads lots of research paper in their field for a
-literature review. Upload any collection of PDF documents and ask questions in plain English.
-Answers are grounded in your uploaded papers with source citations. When documents cannot answer,
-the system searches the web as a fallback.
+especially for the research student in undergraduate and graduate degrees who reads lots of 
+research paper in their field for a literature review. The app user can upload any collection of PDF documents
+and ask questions in plain English. Answers are grounded in your uploaded papers with source citations. 
+When documents cannot answer, the system searches the web as a fallback.
 
-Built as a portfolio project to demonstrate end-to-end LLM application development
+Being that said, it is not only limited to the research students. The user from diverse background 
+(history, finance, legal contracts) could upload their PDF document and ask questions to the systems. The system will
+answer the user's question based on the information available in the uploaded document. 
+
+I built this as a portfolio project to demonstrate end-to-end LLM application development
 covering RAG pipelines, AI agents, evaluation, and deployment.
 
 ---
 
-## What it does?
+## What this application does?
 
 - Upload any PDF documents such as research papers, reports, textbooks, anything text-based.
-- Ask questions and get grounded answers with source citations.
-- Documents are always searched first. Web search is only as fallback if there are not enough information in uploaded papers to provide answers.
-- Evaluation of this app scored at 0.79 faithfulness by using Anthropic Claude as the judge.
+- Ask questions and get answers with source citations.
+- Documents are always searched first. Web search is only as fallback if there are not enough 
+information in uploaded papers to provide answers.
+- Evaluation of this app is scored at **0.79 faithfulness** by using Anthropic Claude as the judge.
 - Query logging for monitoring.
 
 ---
@@ -60,8 +65,8 @@ pip install -r requirements.txt
 
 Create a `.env` file in the project root:
 
-- TAVILY_API_KEY = your-tavily-key
-- ANTHROPIC_API_KEY = your-anthropic-key
+- TAVILY_API_KEY = your_tavily_key
+- ANTHROPIC_API_KEY = your_anthropic_key
 
 
 **5. Run the app**
@@ -71,7 +76,7 @@ streamlit run app.py
 
 ---
 
-## How to use?
+## How to use this application?
 
 1. Open the app in your browser at `localhost:8501`
 2. Upload your PDF files using the sidebar
@@ -81,7 +86,9 @@ streamlit run app.py
 
 ---
 
-## Project structure
+## Project Structure
+
+```
 research_agent/
 ├── app.py — Streamlit UI (Phase 3)
 ├── agent.py — AI agent with 3 tools (Phase 2)
@@ -94,6 +101,7 @@ research_agent/
 ├── pdfs/ — Local document collection (not in GitHub)
 ├── research_db/ — ChromaDB database (not in GitHub)
 └── .env — API keys (not in GitHub)
+```
 
 
 ---
@@ -112,8 +120,8 @@ Evaluated using a custom evaluation framework with Anthropic Claude as the judge
 
 ## Known Limitations
 
-See [LIMITATIONS.md](LIMITATIONS.md) for a full list of known limitations
-and planned fixes for next version or an incremental progress in the application.
+Please refer to [LIMITATIONS.md](LIMITATIONS.md) for a full list of known limitations
+and planned fixes for next version or an incremental progress of the application.
 
 ---
 
@@ -128,4 +136,6 @@ and planned fixes for next version or an incremental progress in the application
 ---
 
 *Built by Rajan Nepal - CS Masters, North Dakota State University*
-*Portfolio project demonstrating LLM application development*
+*Portfolio Project demonstrating end-to-end LLM application development*
+
+*Last Updated - 09/04/2026*
